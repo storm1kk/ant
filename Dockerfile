@@ -5,7 +5,7 @@ LABEL maintainer="storm1kk"
 RUN apt-get update && apt-get install -y \
     curl \
     wget \
-    nc \
+    telnet \
     tshark \
     s3cmd \
     && rm -rf /var/lib/apt/lists/*
