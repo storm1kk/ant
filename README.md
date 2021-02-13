@@ -9,9 +9,6 @@ in Docker:
 docker run -it -h ant --rm --net host storm1kk/ant
 
 
-
-https://hub.docker.com/repository/docker/storm1kk/ant/general
-
 Installed packages:
 
 curl
@@ -21,6 +18,8 @@ tshark
 s3cmd
 netcat
 vim
+iproute2
+dnsutils
 ------
 You can also know your IP by executing myip command.
 
