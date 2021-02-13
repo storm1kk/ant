@@ -25,4 +25,5 @@ vim
 You can also know your IP by executing myip command.
 
 root@ant:~# myip
+
 Your IP address is 1.1.1.1
