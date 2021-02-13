@@ -15,6 +15,6 @@ RUN apt update && apt upgrade -y && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
-RUN ln -s /opt/myip.sh /usr/bin/myip
+RUN chmod +x /opt/myip.sh && ln -s /opt/myip.sh /usr/bin/myip
 
 ENTRYPOINT [ "/bin/bash" ]
