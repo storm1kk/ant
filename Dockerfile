@@ -12,6 +12,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     vim \
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
+COPY ./system/.bashrc /root/
 RUN ln -s /opt/myip.sh /usr/bin/myip
-RUN export PS1='\[\e[0;31m\]\u\e[0;32m@\h\[\e[m\]:\[\e[1;34m\]\w\[\e[m\]\$ '
+
 ENTRYPOINT [ "/bin/bash" ]
