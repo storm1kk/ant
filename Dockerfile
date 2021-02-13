@@ -11,7 +11,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     netcat \
     vim \
     && rm -rf /var/lib/apt/lists/*
-COPY ./scripts/* /opt/
+COPY ./scripts/ /opt/
 RUN ln -s /opt/myip.sh /usr/bin/myip
 
 ENTRYPOINT [ "/bin/bash" ]
