@@ -12,6 +12,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     vim \
     iproute2 \
     dnsutils \
+    openssh-client \
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
