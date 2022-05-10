@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-LABEL version="0.4"
+LABEL version="0.5"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt upgrade -y && apt install -y \
@@ -13,6 +13,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     iproute2 \
     dnsutils \
     openssh-client \
+    cifs-utils \
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
