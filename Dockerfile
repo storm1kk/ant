@@ -12,7 +12,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     iproute2 \
     dnsutils \
     openssh-client \
-    postgresql-client
+    postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
