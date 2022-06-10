@@ -15,10 +15,11 @@ curl
 wget
 telnet
 tshark
-s3cmd
+postgresql-client
 netcat
 vim
 iproute2
+cifs-utils
 dnsutils
 ------
 You can also know your IP by executing myip command.
