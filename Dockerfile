@@ -7,13 +7,12 @@ RUN apt update && apt upgrade -y && apt install -y \
     wget \
     telnet \
     tshark \
-    s3cmd \
     netcat \
     vim \
     iproute2 \
     dnsutils \
     openssh-client \
-    cifs-utils \
+    postgresql-client
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
