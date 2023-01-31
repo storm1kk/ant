@@ -1,12 +1,11 @@
 FROM ubuntu:22.04
-LABEL version="0.10"
+LABEL version="0.11"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt install -y \
     curl \
     wget \
     telnet \
-    tshark \
     netcat \
     vim \
     iproute2 \
