@@ -1,5 +1,5 @@
 FROM ubuntu:22.04
-LABEL version="0.6"
+LABEL version="0.9"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt upgrade -y && apt install -y \
