@@ -1,5 +1,5 @@
-FROM ubuntu:20.04
-LABEL version="0.5"
+FROM ubuntu:22.04
+LABEL version="0.6"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt upgrade -y && apt install -y \
@@ -13,6 +13,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     dnsutils \
     openssh-client \
     postgresql-client \
+    git \
     && rm -rf /var/lib/apt/lists/*
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
