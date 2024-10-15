@@ -1,13 +1,13 @@
 FROM ubuntu:24.04
-LABEL version="0.12"
+LABEL version="0.13"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt install -y \
     curl \
     wget \
     telnet \
-    netcat \
-    neovim \
+    ncat \
+    vim \
     iproute2 \
     dnsutils \
     openssh-client \
