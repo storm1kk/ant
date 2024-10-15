@@ -1,5 +1,5 @@
-FROM ubuntu:22.04
-LABEL version="0.11"
+FROM ubuntu:24.04
+LABEL version="0.12"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt install -y \
@@ -7,7 +7,7 @@ RUN apt update && apt install -y \
     wget \
     telnet \
     netcat \
-    vim \
+    neovim \
     iproute2 \
     dnsutils \
     openssh-client \
