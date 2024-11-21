@@ -1,5 +1,4 @@
 FROM ubuntu:24.04
-LABEL version="0.13"
 LABEL maintainer="storm1kk"
 
 RUN apt update && apt install -y \
@@ -14,6 +13,7 @@ RUN apt update && apt install -y \
     postgresql-client \
     git \
     sudo \
+    redis \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./scripts/ /opt/
