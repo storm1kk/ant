@@ -37,4 +37,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: storm1kk/ant:$GITHUB_RUN_ID
+          tags: storm1kk/ant:${{ github.run_id }}
