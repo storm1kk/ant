@@ -13,9 +13,20 @@ RUN apt update && apt install -y \
     openssh-client \
     postgresql-client \
     git \
+    sudo \
     && rm -rf /var/lib/apt/lists/*
+
+# Create a new user and add it to the sudo group with no password
+RUN useradd -m -s /bin/bash user && \
+    echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Switch to the new user
+USER user
+
+# Copy scripts and configuration files
 COPY ./scripts/ /opt/
 COPY ./system/.bashrc /root/
-RUN chmod +x /opt/myip.sh && ln -s /opt/myip.sh /usr/bin/myip
+COPY ./system/.bashrc /home/user/
+RUN chmod +x /opt/myip.sh && sudo ln -s /opt/myip.sh /usr/bin/myip
 
 ENTRYPOINT [ "/bin/bash" ]
