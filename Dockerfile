@@ -16,6 +16,10 @@ RUN apt update && apt install -y \
     sudo \
     && rm -rf /var/lib/apt/lists/*
 
+COPY ./scripts/ /opt/
+COPY ./system/.bashrc /root/
+RUN chmod +x /opt/myip.sh && sudo ln -s /opt/myip.sh /usr/bin/myip
+
 # Create a new user and add it to the sudo group with no password
 RUN useradd -m -s /bin/bash user && \
     echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
@@ -24,9 +28,7 @@ RUN useradd -m -s /bin/bash user && \
 USER user
 
 # Copy scripts and configuration files
-COPY ./scripts/ /opt/
-COPY ./system/.bashrc /root/
 COPY ./system/.bashrc /home/user/
-RUN chmod +x /opt/myip.sh && sudo ln -s /opt/myip.sh /usr/bin/myip
+
 
 ENTRYPOINT [ "/bin/bash" ]
