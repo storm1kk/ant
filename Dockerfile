@@ -21,14 +21,14 @@ COPY ./system/.bashrc /root/
 RUN chmod +x /opt/myip.sh && sudo ln -s /opt/myip.sh /usr/bin/myip
 
 # Create a new user and add it to the sudo group with no password
-RUN useradd -m -s /bin/bash user && \
-    echo "user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd -m -u 1001 -s /bin/bash player1 && \
+    echo "player1 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Switch to the new user
-USER user
+USER 1001
 
 # Copy scripts and configuration files
-COPY ./system/.bashrc /home/user/
+COPY ./system/.bashrc /home/player1/
 
 
 ENTRYPOINT [ "/bin/bash" ]
